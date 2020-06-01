@@ -8,7 +8,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
-import com.example.myweatherapp.R;
+import com.tds.weatherapplication.R;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -54,7 +54,7 @@ public class getWeatherData extends AsyncTask<URL, Void, Void> implements Animat
             }
 
         } catch (IOException e) {
-            Log.d("Exception occured",e.getMessage());
+            Log.d("Exception occurred",e.getMessage());
         }
 
         return null ;
@@ -74,7 +74,7 @@ public class getWeatherData extends AsyncTask<URL, Void, Void> implements Animat
             JSONObject jar1 ;
             JSONObject obj = new JSONObject(data);
             jar = obj.getJSONArray("weather");
-            jar1 = (JSONObject)obj.getJSONObject("main");
+            jar1 = obj.getJSONObject("main");
 
 
             JSONObject weather = (JSONObject) jar.get(0);
@@ -143,17 +143,20 @@ public class getWeatherData extends AsyncTask<URL, Void, Void> implements Animat
     }
 
     @Override
+    // notifies the start of the animation
     public void onAnimationStart(Animation animation) {
 
 
     }
 
     @Override
+    // notifies the end of the animation
     public void onAnimationEnd(Animation animation) {
 
     }
 
     @Override
+    // notifies the repetition of the animation
     public void onAnimationRepeat(Animation animation) {
 
     }

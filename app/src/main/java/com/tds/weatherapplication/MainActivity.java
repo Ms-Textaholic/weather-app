@@ -21,7 +21,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
-import com.example.myweatherapp.R;
+import com.tds.weatherapplication.R;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.net.MalformedURLException;
@@ -69,9 +69,7 @@ public class MainActivity extends AppCompatActivity {
         imm.hideSoftInputFromWindow(tv_city.getWindowToken(), 0);
 
         btn_go.setOnTouchListener(new View.OnTouchListener() {
-
-
-
+            // implementation of OnTouchListener
             public boolean onTouch(View v, MotionEvent event) {
                 switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN: {
@@ -87,8 +85,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 return false;
-            }
-        });
+            } // onTouch
+        }); // OnTouchListener, setOnTouchListener
 
         key="5b94bd457bf6dc75cd84a7631798856f";
         url = "https://openweathermap.org/data/2.5/weather?q="+ tv_city.getText().toString() + "&appid=" + key;
